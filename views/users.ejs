@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-white">
+    <div class="p-10">
+        <h1 class="text-3xl font-bold mb-6">All Users</h1>
+        <ul>
+            <% if (users.length === 0) { %>
+                <li class="mb-2 p-2 text-red-400">No users available</li>
+            <% } else { %>
+                <% users.forEach(function(user) { %>
+                    <li class="mb-2 p-2 border-b border-zinc-700">
+                        <strong>Name:</strong> <%= user.name %> |
+                        <strong>Email:</strong> <%= user.email %> |
+                        <strong>Age:</strong> <%= user.age %> |
+                        <strong>Hashed Password:</strong> <%= user.password %> |
+                        <strong>Registered At:</strong> <%= user.createdAt ? new Date(user.createdAt).toLocaleString() : "N/A" %> |
+                        <strong>Last Login:</strong> <%= user.lastLogin ? new Date(user.lastLogin).toLocaleString() : "Never" %>
+                    </li>
+                <% }); %>
+            <% } %>
+        </ul>
+        <div class="mt-8 flex gap-4">
+            <a href="/" class="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">Home</a>
+            <a href="/login" class="px-4 py-2 bg-green-600 rounded hover:bg-green-700">Go to Login</a>
+        </div>
+    </div>
+</body>
+</html>

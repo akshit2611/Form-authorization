@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="/stylesheets/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900">">
+    <h1 class="text-red-500 text-3xl px-20 mt-5"><u>Create Users</u></h1>
+    <div class="p-20">
+        <form action="/create" method="POST" class="flex flex-row gap-4 flex-wrap">
+            <input class="bg-gray-700 text-white h-7 rounded-md" type="text" placeholder="name" name="name"> 
+            <input class="bg-gray-700 text-white rounded-md" type="text" placeholder="email" name="email">  
+            <input class="bg-gray-700 text-white rounded-md" type="text" placeholder="password" name="password">
+            <input class="bg-gray-700 text-white rounded-md" type="number" placeholder="age" name="age">
+            <input class="bg-blue-500 color-white px-5 text rounded-md" type="submit" placeholder="create"> 
+        </form>
+    </div>
+    <a  class="text-blue-500 px-20 border-md" href="/login"><u>Already have an account</u></a>
+    <a  class="text-blue-500 px-20 border-md" href="/users"><u>All Users</u></a>
+
+<script src="/javascripts/script.js"></script>
+</body>
+</html>

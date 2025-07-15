@@ -1,6 +1,7 @@
 const express=require("express");
 const app=express();
-const port=4000;
+require("dotenv").config();
+const port = process.env.PORT || 4000;
 const mongo=require("mongoose");
 const path=require("path")
 const datamodel=require("./datamodel");
@@ -36,7 +37,7 @@ app.post("/create",(req,res)=>{
                     age,
                     createdAt: new Date()
                 });
-                let token = jwt.sign({ email }, "secretkey");
+                let token = jwt.sign({ email }, process.env.JWT_SECRET);
                 res.cookie("token", token);
                 // Fetch all users and render users.ejs
                 let users = await datamodel.find();

@@ -9,8 +9,7 @@ const path=require("path")
 const datamodel=require("./datamodel");
 const bcrypt=require("bcrypt");
 const ejs=require("ejs");
-const jwt=require("jsonwebtoken")
-;
+const jwt=require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const { log } = require("console");
 
